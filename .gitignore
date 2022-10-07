@@ -29,6 +29,7 @@ hs_err_pid*
 *.iws
 *.iml
 *.ipr
+desktop.ini
 
 target/
 !.mvn/wrapper/maven-wrapper.jar

@@ -17,6 +17,7 @@ public class Clientes {
 	private static String SELECT_ALL = "select * from cliente";
 	private static String UPDATE = "update cliente set nome = ? where id = ?";
 	private static String DELETE = "delete from cliente where id = ?";
+	private static String SELECT_NOME = "select * from cliente ";
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -39,6 +40,17 @@ public class Clientes {
 	
 	public void deletar(Integer id) {
 		jdbcTemplate.update(DELETE, new Object[]{id});
+	}
+	
+	public List<Cliente> buscarNome(String nome) {
+		return jdbcTemplate.query(SELECT_ALL.concat(" where nome like ? "),
+				new Object[]{"%"+nome+"%"},
+				new RowMapper<Cliente>(){
+				@Override
+				public Cliente mapRow(ResultSet resultSet, int i) throws SQLException {
+					return new Cliente(resultSet.getString("nome"));
+				}
+			});
 	}
 	
 	public List<Cliente> listarTodos(){

@@ -21,11 +21,15 @@ public class VendasApplication {
 	@Bean
 	public CommandLineRunner init(@Autowired Clientes clientes) {
 		return args -> {
-			clientes.salvar(new Cliente("Sebastian"));
-			clientes.salvar(new Cliente("Francisco"));
+			clientes.salvar(new Cliente("Luffy"));
+			clientes.salvar(new Cliente("Zoro"));
+			clientes.salvar(new Cliente("Nami"));
+			clientes.salvar(new Cliente("Usopp"));
 			
 			List<Cliente> todosClientes = clientes.listarTodos();
 			todosClientes.forEach(System.out::println);
+			
+			
 		};
 	}
 
