@@ -1,7 +1,22 @@
 package io.github.katherine.domain.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "cliente") //Não precisa colocar se o nome da classe éigual no BD também
 public class Cliente {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id") //Não é obrigatório se o nome for igual na tabela do BD
 	private Integer id;
+	
+	@Column(name = "nome", length = 100)
 	private String nome;
 	
 	public Cliente() {
