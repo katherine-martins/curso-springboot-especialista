@@ -21,9 +21,10 @@ public class Cliente {
 	
 	public Cliente() {
 		
-	}
+	} 
 	
 	public Cliente(String nome) {
+		//this.id = id; 
 		this.nome = nome;
 	}
 	
@@ -45,7 +46,8 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome;
+		return "ID: " + id + " | " +
+				"Nome: " + nome;
 	}
 	
 	
