@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "cliente") //Não precisa colocar se o nome da classe éigual no BD também
+@Table(name = "cliente") //Não precisa colocar se o nome da classe eh igual no BD tambem
 public class Cliente {
 	
 	@Id
@@ -15,7 +15,7 @@ public class Cliente {
 	@Column(name = "nome", length = 100)
 	private String nome;
 
-	@OneToMany (mappedBy = "cliente", fetch = "FetchType.LAZY")
+	@OneToMany (mappedBy = "cliente", fetch = FetchType.LAZY)
 	private Set<Pedido> pedidos;
 
 	public Cliente() {

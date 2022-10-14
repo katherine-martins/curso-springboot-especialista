@@ -11,7 +11,7 @@ public class ItemPedido {
 	private Integer id;
 
 	@ManyToOne
-	@JoinColumn(name = "pedido_id")
+	@JoinColumn(name = "pedido_id") //Usado na classe que tem a chave estrangeira
 	private Pedido pedido;
 
 	@ManyToOne
